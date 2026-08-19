@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دیجی‌لند | فروشگاه اینترنتی کالای دیجیتال</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      .hero-swiper .swiper-pagination-bullet {
+        background: #94a3b8;
+        opacity: 1;
+      }
+
+      .hero-swiper .swiper-pagination-bullet-active {
+        background: #1f2937;
+      }
+
+      .product-carousel-track {
+        scrollbar-width: none;
+      }
+
+      .product-carousel-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .product-carousel-button {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 9999px;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+        color: #1f2937;
+        display: flex;
+        font-size: 1.5rem;
+        height: 2.25rem;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition:
+          color 0.2s ease,
+          background-color 0.2s ease;
+        width: 2.25rem;
+        z-index: 20;
+      }
+
+      .product-carousel-button:hover {
+        background: #ffffff;
+        color: #dc2626;
+      }
+
+      .product-carousel-button-right {
+        right: 0.5rem;
+      }
+
+      .product-carousel-button-left {
+        left: 0.5rem;
+      }
+
+      @media (min-width: 640px) {
+        .product-carousel-button-right {
+          right: 1rem;
+        }
+
+        .product-carousel-button-left {
+          left: 1rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .product-carousel-button {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <img
+      src="./pictures/DESKTOPSECTIONBANNER-3b6cc117-fdfe-4af8-a4fe-7a06cb82833e.gif"
+      alt="بنر تبلیغاتی دیجی‌لند"
+      class="w-full h-auto"
+    />
+
+    <!-- Navbar: راست به چپ = لوگو، سرچ، سبد خرید، ورود/ثبت‌نام -->
+    <div
+      class="navbar flex flex-col md:flex-row md:items-center gap-4 mt-5 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10"
+    >
+      <!-- ردیف بالا در موبایل: لوگو + آیکون‌ها؛ در دسکتاپ این دیوها با contents از بین می‌رن و بچه‌ها مستقیم عضو navbar می‌شن -->
+      <div class="flex items-center justify-between gap-4 md:contents">
+        <!-- ۱. لوگو (راست‌ترین) -->
+        <img
+          src="./pictures/dgland_main_logo.svg"
+          class="h-8 sm:h-10 flex-shrink-0 md:order-1"
+          alt="لوگوی دیجی‌لند"
+        />
+
+        <!-- گروه آیکون‌های سبد خرید و ورود (فقط در موبایل کنار هم) -->
+        <div class="flex items-center gap-3 sm:gap-4 md:contents">
+          <!-- ۳. سبد خرید -->
+          <button
+            class="flex items-center justify-center rounded-2xl p-2 border border-red-500 w-10 sm:w-12 h-10 sm:h-12 flex-shrink-0 hover:border-4 transition-all duration-150 ease-in-out md:order-3"
+            aria-label="سبد خرید"
+          >
+            <img
+              src="./pictures/charck.png"
+              class="h-6 sm:h-8 w-auto"
+              alt="سبد خرید"
+            />
+          </button>
+
+          <!-- ۴. ورود و ثبت‌نام (چپ‌ترین) -->
+          <button
+            class="flex items-center justify-center rounded-2xl p-2 border border-red-500 w-28 sm:w-36 h-10 sm:h-12 flex-shrink-0 hover:border-4 transition-all duration-150 ease-in-out md:order-4"
+            aria-label="ورود و ثبت‌نام"
+          >
+            <img
+              src="./pictures/vorod.png"
+              class="h-6 sm:h-8 w-auto"
+              alt="ورود و ثبت‌نام"
+            />
+          </button>
+        </div>
+      </div>
+
+      <!-- ۲. سرچ‌باکس -->
+      <input
+        type="text"
+        dir="rtl"
+        placeholder="جست و جو ..."
+        class="flex-1 w-full md:w-[420px] lg:w-[600px] xl:w-[700px] bg-slate-200 rounded-2xl px-3 py-2 text-right placeholder:text-right [direction:rtl] [unicode-bidi:plaintext] hover:border-2 border-red-600 transition-all duration-100 md:order-2"
+      />
+    </div>
+
+    <!-- Links under search -->
+    <div
+      class="textundersearch flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6 justify-center md:justify-start max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 mt-4 text-sm text-center"
+    >
+      <p
+        class="hover:text-red-600 cursor-pointer transition-all duration-200 hover:-translate-y-1"
+      >
+        دسته بندی کالا ها
+      </p>
+      <p
+        class="hover:text-red-600 cursor-pointer transition-all duration-200 hover:-translate-y-1"
+      >
+        خرید اقساطی
+      </p>
+      <p
+        class="hover:text-red-600 cursor-pointer transition-all duration-200 hover:-translate-y-1"
+      >
+        پیشنهاد طلایی
+      </p>
+      <p
+        class="hover:text-red-600 cursor-pointer transition-all duration-200 hover:-translate-y-1"
+      >
+        مجله دیجی لند
+      </p>
+      <p
+        class="hover:text-red-600 cursor-pointer transition-all duration-200 hover:-translate-y-1"
+      >
+        شعبه دیجی لند
+      </p>
+    </div>
+
+    <!-- Slider -->
+    <div
+      class="relative w-full h-[200px] sm:h-[280px] md:h-[360px] lg:h-[450px] mt-5"
+    >
+      <div class="hero-swiper swiper relative w-full h-full overflow-hidden">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="./pictures/DESKTOPSLIDE-cf55b5e7-325d-4d7e-b25f-7ed4fba5550c.webp"
+              alt="پیشنهاد ویژه ۱"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./pictures/slide2.webp"
+              alt="پیشنهاد ویژه ۲"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./pictures/slide3.webp"
+              alt="پیشنهاد ویژه ۳"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="hero-swiper-button-right absolute right-3 sm:right-5 top-1/2 z-10 flex h-9 w-9 sm:h-11 sm:w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-2xl text-gray-800 shadow-md transition-all duration-200 hover:bg-white hover:text-red-600"
+          aria-label="حرکت اسلاید به راست"
+        >
+          &lsaquo;
+        </button>
+        <button
+          type="button"
+          class="hero-swiper-button-left absolute left-3 sm:left-5 top-1/2 z-10 flex h-9 w-9 sm:h-11 sm:w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-2xl text-gray-800 shadow-md transition-all duration-200 hover:bg-white hover:text-red-600"
+          aria-label="حرکت اسلاید به چپ"
+        >
+          &rsaquo;
+        </button>
+
+        <div class="hero-swiper-pagination swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- Category icons -->
+    <div
+      class="container1 flex flex-wrap gap-x-6 gap-y-6 sm:gap-x-10 md:gap-x-16 lg:gap-x-28 justify-center items-start max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 w-full mt-10"
+    >
+      <div class="flex flex-col items-center gap-2 w-16">
+        <img
+          class="h-12 w-12 sm:h-16 sm:w-16 object-contain cursor-pointer hover:border-2 border-red-600 rounded-full duration-100 transition-all"
+          src="./pictures/charger & powerbank.png"
+          alt="شارژر و پاوربانک"
+        />
+        <p class="text-xs sm:text-sm text-center">شارژر و پاوربانک</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-2 w-16">
+        <img
+          class="h-12 w-12 sm:h-16 sm:w-16 object-contain cursor-pointer hover:border-2 border-red-600 rounded-full duration-100 transition-all"
+          src="./pictures/headphone.png"
+          alt="هدفون"
+        />
+        <p class="text-xs sm:text-sm text-center">هدفون</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-2 w-16">
+        <img
+          class="h-12 w-12 sm:h-16 sm:w-16 object-contain cursor-pointer hover:border-2 border-red-600 rounded-full duration-100 transition-all"
+          src="./pictures/laptop.png"
+          alt="لپ‌تاپ"
+        />
+        <p class="text-xs sm:text-sm text-center">لپ‌تاپ</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-2 w-16">
+        <img
+          class="h-12 w-12 sm:h-16 sm:w-16 object-contain cursor-pointer hover:border-2 border-red-600 rounded-full duration-100 transition-all"
+          src="./pictures/mobile.png"
+          alt="موبایل"
+        />
+        <p class="text-xs sm:text-sm text-center">موبایل</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-2 w-16">
+        <img
+          class="h-12 w-12 sm:h-16 sm:w-16 object-contain cursor-pointer hover:border-2 border-red-600 rounded-full duration-100 transition-all"
+          src="./pictures/saat hooshmand.png"
+          alt="ساعت هوشمند"
+        />
+        <p class="text-xs sm:text-sm text-center">ساعت هوشمند</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-2 w-16">
+        <img
+          class="h-12 w-12 sm:h-16 sm:w-16 object-contain cursor-pointer hover:border-2 border-red-600 rounded-full duration-100 transition-all"
+          src="./pictures/speaker.png"
+          alt="اسپیکر"
+        />
+        <p class="text-xs sm:text-sm text-center">اسپیکر</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-2 w-16">
+        <img
+          class="h-12 w-12 sm:h-16 sm:w-16 object-contain cursor-pointer hover:border-2 border-red-600 rounded-full duration-100 transition-all"
+          src="./pictures/zakhiresazi.png"
+          alt="ذخیره‌سازی"
+        />
+        <p class="text-xs sm:text-sm text-center">ذخیره‌سازی</p>
+      </div>
+    </div>
+
+    <!-- Flash sale -->
+    <div class="container2 product-carousel relative bg-red-700 mt-9 w-full">
+      <div class="flex items-center gap-2 justify-center pt-6">
+        <p class="text-white text-lg sm:text-xl font-bold">تخفیف تایم</p>
+        <img
+          class="h-10 w-10 sm:h-16 sm:w-16 object-contain"
+          src="./pictures/big_white_golden_offer.svg"
+          alt="نماد پیشنهاد طلایی"
+        />
+      </div>
+
+      <div
+        dir="rtl"
+        class="product-carousel-track flex lg:grid lg:grid-cols-4 xl:grid-cols-7 gap-2 sm:gap-4 lg:gap-6 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 py-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth"
+      >
+        <!-- کارت محصول ۱ -->
+        <div
+          class="flex-none w-[56vw] max-w-[185px] sm:w-[220px] md:w-[240px] lg:w-full lg:max-w-none snap-start relative border-2 border-red-600 rounded-2xl p-2 sm:p-4 flex flex-col items-center bg-white transition-all duration-300 hover:-translate-y-4 cursor-pointer"
+        >
+          <div
+            class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۱۸٪
+          </div>
+          <img
+            src="./pictures/hardexternal.jpeg"
+            alt="هارد اکسترنال سیلیکون پاور مدل ارمور ظرفیت ۱ ترابایت"
+            class="h-24 sm:h-36 md:h-44 object-contain mt-3 mb-3"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right flex-1 [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هارد اکسترنال سیلیکون پاور مدل ارمور ظرفیت ۱ ترابایت
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۲۰٬۰۰۰٬۰۰۰ تومان
+          </p>
+          <p class="text-black font-bold text-sm sm:text-base">
+            ۱۶٬۴۵۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[185px] sm:w-[220px] md:w-[240px] lg:w-full lg:max-w-none snap-start relative border-2 border-red-600 rounded-2xl p-2 sm:p-4 flex flex-col items-center bg-white transition-all duration-300 hover:-translate-y-4 cursor-pointer"
+        >
+          <div
+            class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۱۵٪
+          </div>
+          <img
+            src="./pictures/partybox.gif"
+            alt="اسپیکر بلوتوثی جی بی ال مدل partybox ultimate"
+            class="h-24 sm:h-36 md:h-44 object-contain mt-3 mb-3"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right flex-1 [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            اسپیکر بلوتوثی جی بی ال مدل partbox ultimate
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۲۷۰٬۰۰۰٬۰۰۰ تومان
+          </p>
+          <p class="text-black font-bold text-sm sm:text-base">
+            ۲۲۸٬۹۹۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[185px] sm:w-[220px] md:w-[240px] lg:w-full lg:max-w-none snap-start relative border-2 border-red-600 rounded-2xl p-2 sm:p-4 flex flex-col items-center bg-white transition-all duration-300 hover:-translate-y-4 cursor-pointer"
+        >
+          <div
+            class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۶۱٪
+          </div>
+          <img
+            src="./pictures/saat.jpeg"
+            alt="ساعت هوشمند مکس پاور مدل ultra max ۴۴mm با بند سیلیکونی"
+            class="h-24 sm:h-36 md:h-44 object-contain mt-3 mb-3"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right flex-1 [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            ساعت هوشمند مکس پاور مدل ultra max 44mm با بند سیلیکونی
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">۵٬۹۰۰٬۰۰۰ تومان</p>
+          <p class="text-black font-bold text-sm sm:text-base">
+            ۲٬۲۹۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[185px] sm:w-[220px] md:w-[240px] lg:w-full lg:max-w-none snap-start relative border-2 border-red-600 rounded-2xl p-2 sm:p-4 flex flex-col items-center bg-white transition-all duration-300 hover:-translate-y-4 cursor-pointer"
+        >
+          <div
+            class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۴٪
+          </div>
+          <img
+            src="./pictures/hkaura.jpeg"
+            alt="اسپیکر بلوتوثی هارمن کاردن مدل Aura Studio 5"
+            class="h-24 sm:h-36 md:h-44 object-contain mt-3 mb-3"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right flex-1 [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            اسپیکر بلوتوثی هارمن کاردن مدل Aura Studio 5
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۵۵٬۰۰۰٬۰۰۰ تومان
+          </p>
+          <p class="text-black font-bold text-sm sm:text-base">
+            ۵۲٬۷۵۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[185px] sm:w-[220px] md:w-[240px] lg:w-full lg:max-w-none snap-start relative border-2 border-red-600 rounded-2xl p-2 sm:p-4 flex flex-col items-center bg-white transition-all duration-300 hover:-translate-y-4 cursor-pointer"
+        >
+          <div
+            class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۶٪
+          </div>
+          <img
+            src="./pictures/party520.jpeg"
+            alt="اسپیکر بلوتوثی جی بی ال مدل JBL partybox 520"
+            class="h-24 sm:h-36 md:h-44 object-contain mt-3 mb-3"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right flex-1 [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            اسپیکر بلوتوثی جی بی ال مدل JBL partybox 520
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۱۰۲٬۰۰۰٬۰۰۰ تومان
+          </p>
+          <p class="text-black font-bold text-sm sm:text-base">
+            ۹۵٬۹۵۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[185px] sm:w-[220px] md:w-[240px] lg:w-full lg:max-w-none snap-start relative border-2 border-red-600 rounded-2xl p-2 sm:p-4 flex flex-col items-center bg-white transition-all duration-300 hover:-translate-y-4 cursor-pointer"
+        >
+          <div
+            class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۱۰٪
+          </div>
+          <img
+            src="./pictures/hardArmor.jpeg"
+            alt="هارد اکسترنال سیلیکون پاور مدل ارمور ظرفیت ۱ ترابایت"
+            class="h-24 sm:h-36 md:h-44 object-contain mt-3 mb-3"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right flex-1 [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هارد اکسترنال سیلیکون پاور مدل ارمور ظرفیت ۱ ترابایت
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۱۸٬۷۰۰٬۰۰۰ تومان
+          </p>
+          <p class="text-black font-bold text-sm sm:text-base">
+            ۱۶٬۷۹۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[185px] sm:w-[220px] md:w-[240px] lg:w-full lg:max-w-none snap-start relative border-2 border-red-600 rounded-2xl p-2 sm:p-4 flex flex-col items-center bg-white transition-all duration-300 hover:-translate-y-4 cursor-pointer"
+        >
+          <div
+            class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۲۳٪
+          </div>
+          <img
+            src="./pictures/sandisk.gif"
+            alt="فلش مموری سن دیسک مدل ULTRA SHIFT ظرفیت ۱۲۸ گیگابایت"
+            class="h-24 sm:h-36 md:h-44 object-contain mt-3 mb-3"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right flex-1 [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            فلش مموری سن دیسک مدل ULTRA SHIFT ظرفیت ۱۲۸ گیگابایت
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">۳٬۱۰۰٬۰۰۰ تومان</p>
+          <p class="text-black font-bold text-sm sm:text-base">
+            ۲٬۳۹۹٬۰۰۰ تومان
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Promo image row 1 -->
+    <div class="product-carousel relative max-w-[1600px] mx-auto mt-5">
+      <div
+        class="container3 product-carousel-track flex flex-nowrap lg:flex-wrap justify-start lg:justify-center items-stretch gap-2 sm:gap-4 px-4 sm:px-6 lg:px-10 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth"
+      >
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/ipapplewatchkharid.webp"
+            alt="پیشنهاد خرید اپل واچ"
+          />
+        </div>
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/speakheadphone.webp"
+            alt="پیشنهاد خرید اسپیکر و هدفون"
+          />
+        </div>
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/galaxy.webp"
+            alt="پیشنهاد خرید گلکسی"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="imageunder mt-5 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+      <img
+        class="mx-auto max-w-full h-auto"
+        src="./pictures/mahboobtarin.png"
+        alt="محبوب‌ترین‌ها"
+      />
+    </div>
+
+    <!-- Product grid 1 -->
+    <div class="container4 product-carousel relative bg-neutral-100 mt-4">
+      <div
+        dir="rtl"
+        class="picindiv product-carousel-track py-6 md:py-8 lg:py-10 flex lg:grid lg:grid-cols-6 gap-2 sm:gap-4 lg:gap-6 max-w-[1600px] mx-auto px-4 md:px-8 lg:px-10 lg:justify-items-center overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth"
+      >
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۱۸٪
+          </div>
+          <img
+            src="./pictures/a36.jpeg"
+            alt="گوشی موبایل سامسونگ Galaxy A36 5G"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            گوشی موبايل سامسونگ مدل دو سیم کارت ظرفیت 256 گیگابایت رم 8
+            گیگابایت-ویتنام Galaxy A36 5G
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۶۷٬۵۸۰٬۰۰۰ تومان
+          </p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۶۲٬۵۸۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <img
+            src="./pictures/a56.jpeg"
+            alt="گوشی موبایل سامسونگ Galaxy A56 5G"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            گوشی موبایل سامسونگ مدل دو سیم کارت ظرفیت 256 گیگابایت و رم 12
+            گیگابایت - ویتنام Galaxy A56 5G
+          </p>
+          <p class="text-red-600 mt-2 font-bold text-sm sm:text-base">
+            ۱۶٬۴۵۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <img
+            src="./pictures/s25fe.jpeg"
+            alt="گوشی موبایل سامسونگ Galaxy S25 FE"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            گوشی موبایل سامسونگ مدل Galaxy S25 FE دو سیم کارت ظرفیت 256 گیگابایت
+            و رم 8 گیگابایت - ویتنام
+          </p>
+          <p class="text-red-600 font-bold text-sm sm:text-base mt-2">
+            ۱۱۳٬۹۹۹٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۳٪
+          </div>
+          <img
+            src="./pictures/s25ultra.jpeg"
+            alt="گوشی موبایل سامسونگ Galaxy S25 Ultra 5G"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            گوشی موبایل سامسونگ مدل Galaxy S25 Ultra 5G دو سیم کارت ظرفیت 256
+            گیگابایت و رم 12 گیگابایت - ویتنام
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۲۴۹٬۹۹۹٬۰۰۰ تومان
+          </p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۲۴۱٬۹۹۹٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <img
+            src="./pictures/xiaomiA3.jpeg"
+            alt="گوشی موبایل شیائومی Redmi A3 4G"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            گوشی موبایل شیائومی مدل Xiaomi Redmi A3 4G دو سیم کارت با ظرفیت 128
+            گیگابایت و رم 4 گیگابایت - گلوبال
+          </p>
+          <p class="font-bold mt-2 text-red-600 text-sm sm:text-base">
+            ۱۹٬۶۹۹٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۲٪
+          </div>
+          <img
+            src="./pictures/note15xiaomi.jpeg"
+            alt="گوشی موبایل شیائومی Redmi Note 15 4G"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            گوشی موبایل شیائومی مدل دو سیم کارت ظرفیت 256 گیگابایت و رم 8
+            گیگابایت Redmi Note 15 4G
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۴۰٬۹۹۹٬۰۰۰ تومان
+          </p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۳۹٬۹۹۹٬۰۰۰ تومان
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Promo image row 2 -->
+    <div class="product-carousel relative max-w-[1600px] mx-auto mt-5">
+      <div
+        class="conpic1 product-carousel-track flex flex-nowrap lg:flex-wrap justify-start lg:justify-center items-stretch gap-2 sm:gap-4 px-4 sm:px-6 lg:px-10 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth"
+      >
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/headphone30.jpeg"
+            alt="پیشنهاد ۳۰٪ تخفیف هدفون"
+          />
+        </div>
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/saat30.jpeg"
+            alt="پیشنهاد ۳۰٪ تخفیف ساعت هوشمند"
+          />
+        </div>
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/speaker25.jpeg"
+            alt="پیشنهاد ۲۵٪ تخفیف اسپیکر"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="containerpic1 flex justify-center mt-5 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10"
+    >
+      <img
+        class="w-full max-w-[1250px] h-24 sm:h-32 md:h-40 lg:h-auto object-cover cursor-pointer"
+        src="./pictures/conpic1.png"
+        alt="بنر تبلیغاتی"
+      />
+    </div>
+
+    <!-- Promo image row 3 -->
+    <div class="product-carousel relative max-w-[1600px] mx-auto mt-7">
+      <div
+        class="conpic2 product-carousel-track flex flex-nowrap lg:flex-wrap justify-start lg:justify-center items-stretch gap-2 sm:gap-4 px-4 sm:px-6 lg:px-10 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth"
+      >
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/usb40.jpeg"
+            alt="پیشنهاد تخفیف حافظه USB"
+          />
+        </div>
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/saat302.jpeg"
+            alt="پیشنهاد تخفیف ساعت هوشمند"
+          />
+        </div>
+        <div
+          class="flex-none w-[82vw] sm:w-[52vw] lg:w-[calc(33.333%-11px)] snap-start"
+        >
+          <img
+            class="w-full h-56 sm:h-44 md:h-72 lg:h-auto object-cover rounded-3xl cursor-pointer"
+            src="./pictures/hard20.jpeg"
+            alt="پیشنهاد تخفیف هارد اکسترنال"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Product grid 2 -->
+    <div class="container4 product-carousel relative bg-neutral-100 mt-4">
+      <div
+        dir="rtl"
+        class="picindiv product-carousel-track py-6 md:py-8 lg:py-10 flex lg:grid lg:grid-cols-6 gap-2 sm:gap-4 lg:gap-6 max-w-[1600px] mx-auto px-4 md:px-8 lg:px-10 lg:justify-items-center overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth"
+      >
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۴٪
+          </div>
+          <img
+            src="./pictures/charger20.jpeg"
+            alt="شارژر اپل مدل ۲۰ وات"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            شارژر اپل مدل ۲۰ وات
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">۳٬۶۰۰٬۰۰۰ تومان</p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۳٬۴۵۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۵٪
+          </div>
+          <img
+            src="./pictures/galaxybuds3.jpeg"
+            alt="هدفون بلوتوثی سامسونگ Galaxy Buds 3 Pro"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هدفون بلوتوثی سامسونگ مدل Galaxy Buds 3 Pro
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۲۳٬۸۰۰٬۰۰۰ تومان
+          </p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۲۲٬۷۰۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۱۹٪
+          </div>
+          <img
+            src="./pictures/anker1.gif"
+            alt="هدفون بلوتوثی انکر مدل R50i A3949"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هدفون بلوتوثی انکر مدل R50i A3949
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">۲٬۳۸۰٬۰۰۰ تومان</p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۱٬۹۲۳٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۷٪
+          </div>
+          <img
+            src="./pictures/budsFE.gif"
+            alt="هدفون بلوتوثی سامسونگ Galaxy Buds FE"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هدفون بلوتوثی سامسونگ مدل Galaxy Buds FE
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۱۲٬۲۵۰٬۰۰۰ تومان
+          </p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۱۱٬۴۵۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <img
+            src="./pictures/QCY.gif"
+            alt="هدفون بلوتوثی کیو سی وای مدل T13x"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هدفون بلوتوثی کیو سی وای مدل T13x
+          </p>
+          <p class="font-bold mt-2 text-red-600 text-sm sm:text-base">
+            ۲٬۰۱۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۱۴٪
+          </div>
+          <img
+            src="./pictures/galaxyWatch8Classic.jpeg"
+            alt="ساعت هوشمند سامسونگ Galaxy Watch 8 Classic 46mm"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            ساعت هوشمند سامسونگ مدل Galaxy Watch 8 Classic 46mm
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">
+            ۴۱٬۵۳۰٬۰۰۰ تومان
+          </p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۳۵٬۸۳۰٬۰۰۰ تومان
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="imgpic70 bg-zinc-800 mt-4 py-6">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-10 lg:px-20">
+        <img
+          class="mx-auto max-w-full h-auto"
+          src="./porforosh.png"
+          alt="پرفروش‌ترین‌ها"
+        />
+      </div>
+    </div>
+
+    <style>
+      .stripe-bg {
+        background-color: #161616;
+        background-image: repeating-linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0px,
+          rgba(0, 0, 0, 0) 130px,
+          rgba(0, 0, 0, 0.55) 130px,
+          rgba(255, 255, 255, 0.04) 142px,
+          rgba(0, 0, 0, 0.55) 154px,
+          rgba(0, 0, 0, 0) 166px
+        );
+      }
+    </style>
+
+    <!-- Highlight strip -->
+    <div class="container101 product-carousel relative">
+      <div class="stripe-bg absolute inset-0 -z-10"></div>
+
+      <div
+        dir="rtl"
+        class="picindiv product-carousel-track py-6 md:py-8 lg:py-10 flex lg:grid lg:grid-cols-5 gap-2 sm:gap-4 lg:gap-6 max-w-[1600px] mx-auto px-4 md:px-8 lg:px-10 lg:justify-items-center relative z-10 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth"
+      >
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-transform duration-500 ease-out hover:z-30 hover:[transform:translate(-30px,10px)_rotate(8deg)] border border-gray-300"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۴٪
+          </div>
+          <img
+            src="./pictures/charger20.jpeg"
+            alt="شارژر اپل مدل ۲۰ وات"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            شارژر اپل مدل ۲۰ وات
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">۳٬۶۰۰٬۰۰۰ تومان</p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۳٬۴۵۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-transform duration-500 ease-out hover:z-30 hover:[transform:translate(-30px,10px)_rotate(8deg)] border border-gray-300"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۷٪
+          </div>
+          <img
+            src="./pictures/a3959.webp"
+            alt="هدفون بلوتوثی انکر مدل R50i NC A3959"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هدفون بلوتوثی انکر مدل R50i NC A3959 (اصل)
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">۳٬۹۵۰٬۰۰۰ تومان</p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۳٬۶۷۰٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-transform duration-500 ease-out hover:z-30 hover:[transform:translate(-30px,10px)_rotate(8deg)] border border-gray-300"
+        >
+          <div
+            class="absolute bottom-5 right-5 bg-red-600 text-white text-xs font-bold rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center"
+          >
+            ۱۹٪
+          </div>
+          <img
+            src="./pictures/anker1.gif"
+            alt="هدفون بلوتوثی انکر مدل R50i A3949"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هدفون بلوتوثی انکر مدل R50i A3949
+          </p>
+          <p class="text-gray-400 text-xs line-through mt-2">۲٬۳۸۰٬۰۰۰ تومان</p>
+          <p class="text-red-600 font-bold text-sm sm:text-base">
+            ۱٬۹۲۳٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-transform duration-500 ease-out hover:z-30 hover:[transform:translate(-30px,10px)_rotate(8deg)] border border-gray-300"
+        >
+          <img
+            src="./pictures/nokia.jpeg"
+            alt="گوشی موبایل نوکیا مدل ۱۰۵ (۲۰۲۳) دو سیم کارت"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            گوشی موبایل نوکیا مدل 105 (2023) دو سیم کارت 2G - مونتاژ ایران
+          </p>
+          <p class="text-red-600 font-bold text-sm sm:text-base mt-2">
+            ۲٬۹۹۹٬۰۰۰ تومان
+          </p>
+        </div>
+
+        <div
+          class="flex-none w-[56vw] max-w-[190px] sm:w-[225px] md:w-[250px] lg:w-full snap-start relative rounded-2xl p-3 sm:p-4 flex flex-col items-end bg-white cursor-pointer transition-transform duration-500 ease-out hover:z-30 hover:[transform:translate(-30px,10px)_rotate(8deg)] border border-gray-300"
+        >
+          <img
+            src="./pictures/QCY.gif"
+            alt="هدفون بلوتوثی کیو سی وای مدل T13x"
+            class="h-24 sm:h-36 md:h-44 w-full object-contain mt-3 mb-3 transition-transform duration-300 hover:scale-110"
+          />
+          <p
+            class="text-xs sm:text-sm w-full text-right line-clamp-2 min-h-[2.5rem] [direction:rtl] [unicode-bidi:plaintext]"
+          >
+            هدفون بلوتوثی کیو سی وای مدل T13x
+          </p>
+          <p class="font-bold mt-2 text-red-600 text-sm sm:text-base">
+            ۲٬۰۱۰٬۰۰۰ تومان
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center pb-6 relative z-10">
+        <button
+          class="bg-red-600 hover:bg-red-700 transition-colors duration-200 ease-in-out rounded-2xl text-white w-40 sm:w-48 h-11 sm:h-12 text-center text-sm sm:text-base"
+        >
+          مشاهده همه
+        </button>
+      </div>
+    </div>
+
+    <!-- Brand strip -->
+    <div class="mt-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+      <img
+        class="mx-auto w-40 sm:w-52 lg:w-60"
+        src="./pictures/brandhayebartar.png"
+        alt="برندهای برتر"
+      />
+    </div>
+    <div
+      class="container303 flex flex-wrap gap-x-6 gap-y-4 sm:gap-x-8 md:gap-x-10 lg:gap-x-14 justify-center items-center max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 mt-8 sm:mt-12"
+    >
+      <img
+        class="h-6 sm:h-7 md:h-8 lg:h-9 xl:h-10 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+        src="./pictures/Apple.png"
+        alt="اپل"
+      />
+      <img
+        class="h-6 sm:h-7 md:h-8 lg:h-9 xl:h-10 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+        src="./pictures/samsungpic.png"
+        alt="سامسونگ"
+      />
+      <img
+        class="h-6 sm:h-7 md:h-8 lg:h-9 xl:h-10 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+        src="./pictures/harmankardon.png"
+        alt="هارمن کاردن"
+      />
+      <img
+        class="h-6 sm:h-7 md:h-8 lg:h-9 xl:h-10 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+        src="./pictures/xiaomipic.png"
+        alt="شیائومی"
+      />
+      <img
+        class="h-6 sm:h-7 md:h-8 lg:h-9 xl:h-10 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+        src="./pictures/ankerpic.png"
+        alt="انکر"
+      />
+      <img
+        class="h-6 sm:h-7 md:h-8 lg:h-9 xl:h-10 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+        src="./pictures/razer.png"
+        alt="ریزر"
+      />
+      <img
+        class="h-6 sm:h-7 md:h-8 lg:h-9 xl:h-10 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+        src="./pictures/sony.png"
+        alt="سونی"
+      />
+    </div>
+
+    <!-- SEO text block -->
+    <div class="container404 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-20 mt-8">
+      <div
+        class="picpix relative flex w-full flex-col items-center rounded-2xl border border-gray-200"
+      >
+        <p
+          class="text-right text-sm sm:text-base leading-8 p-5 sm:p-7 [direction:rtl] [unicode-bidi:plaintext]"
+        >
+          خرید گوشی خرید گوشی و خرید اینترنتی گوشی در این روزها، می‌تواند زمان
+          زیادی از شما بگیرد. در هنگام خرید گوشی موبایل باید به نکات متعددی
+          مانند خرید گوشی موبایل، امکانات گوشی موبایل، ضمانت گوشی موبایل و
+          رجیستری گوشی موبایل در کنار اصالت فروشگاه موبایل دقت کرد. عامل اثرگذار
+          در تصمیم گیری ما، قیمت روز گوشی موبایل می‌باشد. شما می‌توانید از طریق
+          خرید اینترنتی گوشی از فروشگاه اینترنتی موبایل یا خرید حضوری از شعب
+          دی‌جی‌لند اقدام به خرید گوشی سامسونگ، خرید گوشی شیائومی و سایر برندها
+          کنید. فروشگاه اینترنتی موبایل خرید گوشی موبایل از فروشگاه اینترنتی
+          موبایل، یکی از سریع‌ترین راه‌ها به شمار می‌آید. در زمان خرید اینترنتی
+          گوشی موبایل، باید به نکاتی مانند نشان نماد الکترونیکی، پروتکل SSL و
+          درگاه امن پرداخت فروشگاه اینترنتی توجه کنید. قبل از خرید موبایل، نظرات
+          کاربران را بررسی کنید. این نظرات می‌تواند به شما درک بهتری از تجربه
+          خرید دیگران و کیفیت سرویس‌دهی آن فروشگاه اینترنتی بدهد. مورد بعدی که
+          می‌بایست به آن دقت شود اصالت کالای دیجیتال است. خرید اقساطی گوشی
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="mt-10 w-full px-4 sm:px-6 lg:px-10 py-10 border-t border-gray-200"
+      dir="rtl"
+    >
+      <div class="max-w-[1600px] mx-auto">
+        <div class="flex justify-center sm:justify-start mb-8">
+          <img src="./pictures/digilandgray.svg" alt="دیجی‌لند" class="h-8" />
+        </div>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 border-b border-gray-200 pb-8 text-center sm:text-right"
+        >
+          <div class="flex flex-col gap-3">
+            <p class="font-bold text-black mb-1">درباره‌ی دیجی‌لند</p>
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >تماس با ما</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >درباره‌ی ما</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >مجله‌ی دیجی‌لند</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600">شعب</a>
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >شرایط و قوانین</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >خرید اقساطی</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >فرصت‌های شغلی</a
+            >
+          </div>
+          <div class="flex flex-col gap-3">
+            <p class="font-bold text-black mb-1">خدمات مشتریان</p>
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >پرسش‌های متداول</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >راهنمای خرید</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >شرایط بازگشت کالا</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >ثبت شکایات</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >حریم خصوصی</a
+            >
+          </div>
+          <div class="flex flex-col gap-3">
+            <p class="font-bold text-black mb-1">دسته‌بندی‌های پربازدید</p>
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >گوشی موبایل</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >لپ‌تاپ</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >هدفون و هندزفری</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >اسپیکر و بلندگو</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >ساعت هوشمند</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >تجهیزات ذخیره‌سازی</a
+            >
+            <a href="#" class="text-gray-500 text-sm hover:text-red-600"
+              >شارژر و پاوربانک</a
+            >
+          </div>
+          <div class="flex flex-col gap-3">
+            <p class="font-bold text-black mb-1">ساعت پاسخگویی</p>
+            <p class="text-gray-500 text-sm">
+              شنبه تا چهارشنبه ۹ الی ۱۷ و پنج‌شنبه‌ها ۹ الی ۱۳
+            </p>
+            <div class="mt-2">
+              <p class="text-sm text-gray-700">تلفن امور مشتریان</p>
+              <p class="text-sm text-gray-700">۰۲۱-۴۱۰۱۶</p>
+            </div>
+            <div class="mt-2">
+              <p class="text-sm text-gray-700">روابط عمومی</p>
+              <p class="text-sm text-gray-700">Info@dgland.com</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 items-center sm:items-start">
+            <p class="font-bold text-black mb-1">ما را دنبال کنید</p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="h-9 w-9 rounded-full border border-gray-300 flex items-center justify-center hover:border-red-600"
+              >
+                <img src="./pictures/aparat.png" class="h-4 w-4" alt="آپارات" />
+              </a>
+              <a
+                href="#"
+                class="h-9 w-9 rounded-full border border-gray-300 flex items-center justify-center hover:border-red-600"
+              >
+                <img
+                  src="./pictures/linkedin.png"
+                  class="h-4 w-4"
+                  alt="لینکدین"
+                />
+              </a>
+              <a
+                href="#"
+                class="h-9 w-9 rounded-full border border-gray-300 flex items-center justify-center hover:border-red-600"
+              >
+                <img
+                  src="./pictures/telegram.jpeg"
+                  class="h-4 w-4"
+                  alt="تلگرام"
+                />
+              </a>
+              <a
+                href="#"
+                class="h-9 w-9 rounded-full border border-gray-300 flex items-center justify-center hover:border-red-600"
+              >
+                <img
+                  src="./pictures/instagram.jpeg"
+                  class="h-4 w-4"
+                  alt="اینستاگرام"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8">
+          <p class="text-red-600 font-bold mb-2 text-center sm:text-right">
+            فروشگاه اینترنتی دیجی‌لند
+          </p>
+          <p class="text-gray-500 text-sm leading-7 text-center sm:text-right">
+            فروشگاه اینترنتی دیجی‌لند به طور رسمی در فروردین ماه ۹۹ با توجه به
+            رشد روزافزون خدمات اینترنتی و دنیای تکنولوژی در جهان امروز و نیاز به
+            کالاهای دیجیتال تاسیس شد. هدف این فروشگاه اینترنتی خدمت‌رسانی و
+            تامین جدیدترین مدل‌ها از معتبرترین برندهای کالای دیجیتال، لوازم
+            خانگی و سرگرمی است.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const heroSwiper = new Swiper(".hero-swiper", {
+        loop: true,
+        speed: 700,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        pagination: {
+          el: ".hero-swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".hero-swiper-button-left",
+          prevEl: ".hero-swiper-button-right",
+        },
+      });
+
+      document.querySelectorAll(".product-carousel").forEach((carousel) => {
+        const track = carousel.classList.contains("product-carousel-track")
+          ? carousel
+          : carousel.querySelector(".product-carousel-track");
+
+        if (!track) {
+          return;
+        }
+
+        const createButton = (side, label, icon, direction) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.setAttribute("aria-label", label);
+          button.className = `product-carousel-button product-carousel-button-${side}`;
+          button.innerHTML = icon;
+
+          button.addEventListener("click", () => {
+            const amount = Math.min(track.clientWidth * 0.85, 520);
+            track.scrollBy({
+              left: direction * amount,
+              behavior: "smooth",
+            });
+          })
+
+          carousel.appendChild(button);
+        };
+
+        createButton("right", "حرکت محصولات به راست", "&lsaquo;", 1);
+        createButton("left", "حرکت محصولات به چپ", "&rsaquo;", -1);
+      });
+    </script>
+  </body>
+</html>
